@@ -19,6 +19,11 @@ contract EventHub {
     // record of all events
     Event[] public allEvents;
 
+    // get an event using index
+    function getEvent(uint _idx) public view returns (Event memory) {
+        return allEvents[_idx];
+    }
+
     // create an event
     function createEvent(string memory _title, string memory _description, string memory _eventImage, string memory _date, string memory _time, uint _eventCost, string memory _meetUrl, uint _ticketLimit) public {
         // store the new event temporarily
